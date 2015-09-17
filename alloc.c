@@ -130,7 +130,7 @@ a_dalloc(LONG number, LONG size)
 
 // ensure that the memory returned is zeroed
 
-	bzero( newblock, 1l<<index );
+	memset( newblock, 0, 1l<<index );
 
 	return((char *)newblock);
 }
