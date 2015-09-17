@@ -1,5 +1,7 @@
 #include 	<stdio.h>
 #include        "progol.h"
+#include	"alloc.h"
+
 /*
  * #######################################################################
  *
@@ -76,9 +78,8 @@ a_pr_block_stats()
  *      them into a list and then takes the head of the list.
  */
 
-char *
-a_dalloc(number,size)
-        LONG number,size;
+void *
+a_dalloc(LONG number, LONG size)
         {
 	unsigned long int block_size,index;
 	char **newblock,**pos;
@@ -140,12 +141,13 @@ a_dalloc(number,size)
  */
 
 int
-a_dfree(block, block_size)
-	char **block;
-	register LONG block_size;
+a_dfree(void *ptr_block, LONG block_size)
 	{
 	register char **pos;
 	register unsigned long int index;
+
+	void **block = ptr_block;
+
 	memout-=(block_size--);
 	if ((index=LOG2(block_size)+1) < MINBLOCK)
 		index = MINBLOCK;

@@ -1,8 +1,9 @@
+#include "alloc.h"
+
 #ifdef	CHECK_SECURITY
 extern PREDICATE check_security();
 #endif
 extern STRING strsave();
-extern POINTER a_dalloc();
 extern POINTER cnt_alloc();
 extern ITEM h_create();
 extern LIST *h_in();
