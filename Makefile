@@ -5,8 +5,8 @@
 ############################################################################
 
 .SUFFIXES: .pl .cmp
-LDFLAGS= -lm # -O2
-CFLAGS= -m32 -O2 -ggdb3 # -O2 -g  -pg -f68881
+LDFLAGS= -lm
+CFLAGS= -m32 -O2
 CC= gcc 
 OBJECTS= main.o plg.o command.o init.o hash.o func.o set.o \
 	item.o list.o utils.o alloc.o terms.o clause.o lib.o \
