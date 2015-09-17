@@ -6,7 +6,7 @@
 
 .SUFFIXES: .pl .cmp
 LDFLAGS= -lm
-CFLAGS= -m32 -O2
+CFLAGS= -m32 -O2 # 32 bits required with K&R C headers
 CC= gcc 
 OBJECTS= main.o plg.o command.o init.o hash.o func.o set.o \
 	item.o list.o utils.o alloc.o terms.o clause.o lib.o \
